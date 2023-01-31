@@ -17,6 +17,10 @@ npm install
 pnpm install
 ```
 
+Install Tailwind: 
+`npm install --save-dev @nuxtjs/tailwindcss`
+
+
 ## Development Server
 
 Start the development server on http://localhost:3000
