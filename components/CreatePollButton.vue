@@ -1,5 +1,5 @@
 <template>
-    <NuxtLink class="btn font-bold shadow" to="/polls/create">Abstimmung erstellen</NuxtLink>
+    <NuxtLink class="btn" to="/polls/create">Abstimmung erstellen</NuxtLink>
 </template>
 
 <script>
