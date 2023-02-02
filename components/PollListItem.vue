@@ -1,5 +1,5 @@
 <template>
-  <article class="bg-white border-4 border-pomelo-red p-3">
+  <article class="bg-white border-4 border-pomelo-red p-3 w-auto">
     <div class="mb-3 flex flex-row">
       <div class="3/4">
         <img
