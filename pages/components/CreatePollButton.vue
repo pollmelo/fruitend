@@ -1,7 +1,5 @@
 <template>
-  <div>
     <CreatePollButton/>
-  </div>
 </template>
 
 <script>
