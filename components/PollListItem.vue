@@ -15,7 +15,7 @@
 
     <p class="mb-3 truncate">{{ this.description }}</p>
 
-    <span>{{ endDatePrefix }} am {{ new Date(this.endDate).toLocaleDateString() }}</span>
+    <span>{{ endDatePrefix }} am {{ new Date(this.endDate).toLocaleDateString(undefined, this.displayedDateOptions) }}</span>
   </article>
 </template>
 
@@ -27,6 +27,11 @@
       return {
         timestampFromNow: Date.now(),
         timestampOfEndDate: Date.parse(this.endDate),
+        displayedDateOptions: {
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        },
       }
     },
 
