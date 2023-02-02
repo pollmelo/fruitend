@@ -7,7 +7,9 @@
             :src="pollCreatorAvatarUrl"
             alt="Avatar of poll creator"
         />
-        <h5 class="inline-block ml-2 text-lg font-semibold align-middle">{{ this.title }}</h5>
+        <NuxtLink :to="urlToPoll">
+          <h5 class="inline-block ml-2 text-lg font-semibold align-middle">{{ this.title }}</h5>
+        </NuxtLink>
       </div>
 
       <Icon :class="['basis-10', 'h-10', this.trafficLightColor]" name="bi:circle-fill" :size="'5em'" />
@@ -36,6 +38,10 @@
     },
 
     computed: {
+      urlToPoll() {
+        return `/polls/${this.id}`;
+      },
+
       isVotable() {
         return this.timestampOfEndDate > this.timestampFromNow;
       },
