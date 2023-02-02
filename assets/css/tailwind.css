@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply bg-[#E5CB86] text-[#E95829] px-3 py-2 rounded-md text-sm;
+    }
+}
