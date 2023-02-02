@@ -15,7 +15,7 @@
 
     <p class="mb-3 truncate">{{ this.description }}</p>
 
-    <span>endet am 31.12.2023</span>
+    <span>endet am {{ new Date(this.endDate).toLocaleDateString() }}</span>
   </article>
 </template>
 
