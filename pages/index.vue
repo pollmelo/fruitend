@@ -6,14 +6,14 @@
           Jetzt abstimmen!</h1>
       </div>
       <div class="container py-10 mx-auto">
-        <Button/>
+        <CreatePollButton/>
       </div>
     </div>
 </template>
 
 <script setup>
 
-import Button from "~/components/CreatePollButton.vue";</script>
+</script>
 
 <style scoped>
 
