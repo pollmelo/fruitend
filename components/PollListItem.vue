@@ -4,7 +4,7 @@
       <div class="basis-11/12">
         <img
             class="inline-block rounded-full bg-slate-300 w-10 h-10"
-            src="https://api.dicebear.com/5.x/micah/svg?seed=Peter&mouth=pucker,laughing,smile&size=64"
+            :src="pollCreatorAvatarUrl"
             alt="Avatar of poll creator"
         />
         <h5 class="inline-block ml-2 text-lg font-semibold align-middle">{{ this.title }}</h5>
@@ -21,7 +21,7 @@
 
 <script>
   export default {
-    props: ['title', 'description', 'endDate'],
+    props: ['id', 'title', 'description', 'endDate'],
 
     data() {
       return {
@@ -33,6 +33,10 @@
     computed: {
       isVotable() {
         return this.timestampOfEndDate > this.timestampFromNow;
+      },
+
+      pollCreatorAvatarUrl() {
+        return `https://api.dicebear.com/5.x/micah/svg?seed=${this.id}&mouth=pucker,laughing,smile&size=64`;
       },
 
       trafficLightColor() {
