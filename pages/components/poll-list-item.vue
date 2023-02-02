@@ -3,7 +3,7 @@
       :title="'Neue Features hinzufügen'"
       :description="'Lasst uns neue Features erstellen, kann ja nicht so schwierig sein. ' +
        'Informatik ist doch nur wenn, dann xyz'"
-      :end-date="'2023-03-01'"
+      :end-date="'2023-02-01'"
   />
 </template>
 

@@ -15,7 +15,7 @@
 
     <p class="mb-3 truncate">{{ this.description }}</p>
 
-    <span>endet am {{ new Date(this.endDate).toLocaleDateString() }}</span>
+    <span>{{ endDatePrefix }} am {{ new Date(this.endDate).toLocaleDateString() }}</span>
   </article>
 </template>
 
@@ -33,6 +33,10 @@
     computed: {
       isVotable() {
         return this.timestampOfEndDate > this.timestampFromNow;
+      },
+
+      endDatePrefix() {
+        return this.isVotable ? 'endet' : 'endete';
       },
 
       pollCreatorAvatarUrl() {
