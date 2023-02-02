@@ -4,6 +4,6 @@
 
 @layer components {
     .btn {
-        @apply bg-[#E5CB86] text-[#E95829] px-3 py-2 rounded-md text-sm;
+        @apply bg-[#E5CB86] text-[#E95829] p-5 rounded-md text-sm;
     }
 }
