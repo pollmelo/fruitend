@@ -10,7 +10,7 @@
         <h5 class="inline-block ml-2 text-lg font-semibold align-middle">{{ this.title }}</h5>
       </div>
 
-      <Icon :class="['basis-10', 'h-10', 'text-green-400']" name="bi:circle-fill" :size="'5em'" />
+      <Icon :class="['basis-10', 'h-10', this.trafficLightColor]" name="bi:circle-fill" :size="'5em'" />
     </div>
 
     <p class="mb-3 truncate">{{ this.description }}</p>
@@ -22,6 +22,23 @@
 <script>
   export default {
     props: ['title', 'description', 'endDate'],
+
+    data() {
+      return {
+        timestampFromNow: Date.now(),
+        timestampOfEndDate: Date.parse(this.endDate),
+      }
+    },
+
+    computed: {
+      isVotable() {
+        return this.timestampOfEndDate > this.timestampFromNow;
+      },
+
+      trafficLightColor() {
+        return this.isVotable ? 'text-green-500' : 'text-red-500';
+      }
+    }
   }
 </script>
 
