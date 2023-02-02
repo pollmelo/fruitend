@@ -5,7 +5,7 @@
         <h1 class="absolute text-center text-5xl text-pomelo-red font-extrabold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           Jetzt abstimmen!</h1>
       </div>
-      <div class="py-10">
+      <div class="py-10 container mx-auto">
         <NuxtLink class="btn" to="/polls/create">Abstimmung erstellen</NuxtLink>
       </div>
     </div>

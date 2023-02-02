@@ -6,7 +6,7 @@
         </NuxtLink>
         <hr class="h-px my-8 bg-gray-500 border-0 dark:bg-gray-800">
       </header>
-      <div class="container mx-auto p-4">
+      <div>
         <slot/>
       </div>
     </div>
