@@ -1,18 +1,18 @@
 <template>
     <div>
-      <form class="w-full max-w-sm mx-auto">
+      <form class="container mx-auto">
 
         <input
             id="name"
-            class="bg-gray-200 border-2 border-[#E95829] w-full py-2 px-4"
-            type="text" value="*Titel eingeben" required>
+            class="bg-white border-2 border-[#E95829] w-full py-2 px-4"
+            type="text" placeholder="*Titel eingeben" required>
 
         <input
             id="description"
-            class="bg-gray-200 border-2 border-[#E95829] w-full py-2 px-4"
-            type="text" value="*Beschreibung" required>
+            class="bg-white border-2 border-[#E95829] w-full py-2 px-4 h-40"
+            type="text" placeholder="*Beschreibung" required>
         <button
-            class="submit"
+            class="submit mx-auto"
             type="button">
           Veröffentlichen
         </button>
