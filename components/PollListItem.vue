@@ -7,9 +7,12 @@
             :src="pollCreatorAvatarUrl"
             alt="Avatar of poll creator"
         />
-        <NuxtLink :to="urlToPoll">
-          <h5 class="inline-block ml-2 text-lg font-semibold align-middle">{{ this.title }}</h5>
-        </NuxtLink>
+        <h5
+            class="inline-block ml-2 text-lg font-semibold align-middle hover:cursor-pointer"
+            @click="goToPoll"
+        >
+          {{ this.title }}
+        </h5>
       </div>
 
       <Icon :class="['basis-10', 'h-10', this.trafficLightColor]" name="bi:circle-fill" :size="'5em'" />
@@ -56,8 +59,14 @@
 
       trafficLightColor() {
         return this.isVotable ? 'text-green-500' : 'text-red-500';
-      }
-    }
+      },
+    },
+
+    methods: {
+      async goToPoll() {
+        await navigateTo(this.urlToPoll);
+      },
+    },
   }
 </script>
 

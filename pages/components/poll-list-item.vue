@@ -1,5 +1,6 @@
 <template>
   <PollListItem
+      :id="123"
       :title="'Neue Features hinzufügen'"
       :description="'Lasst uns neue Features erstellen, kann ja nicht so schwierig sein. ' +
        'Informatik ist doch nur wenn, dann xyz'"
