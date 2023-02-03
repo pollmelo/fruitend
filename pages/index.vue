@@ -7,12 +7,37 @@
       </div>
       <div class="container py-10 mx-auto">
         <CreatePollButton/>
+
+        <section class="mt-10">
+          <PollListItem
+              v-for="poll in polls" :key="poll.id" :class="['mb-3.5']"
+              :id="poll.id" :name="poll.name" :description="poll.description" :end-date="poll.endDate"
+          />
+        </section>
       </div>
     </div>
 </template>
 
-<script setup>
+<script>
+export default {
+  beforeMount() {
+    this.fetchPolls();
+  },
 
+  data() {
+    return {
+      polls: null,
+    }
+  },
+
+  methods: {
+    async fetchPolls() {
+      const polls = await useFetch('https://backberry.ddev.site/api/polls/all');
+      this.polls = polls.data;
+      console.log('PollBody', polls.data);
+    }
+  }
+}
 </script>
 
 <style scoped>
