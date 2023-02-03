@@ -1,8 +1,9 @@
 <template>
-<CreatePollForm/>
+  <CreatePollForm/>
 </template>
 
-<script setup>
+<script>
+definePageMeta({layout:''});
 </script>
 
 <style scoped>
