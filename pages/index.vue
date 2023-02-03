@@ -9,6 +9,7 @@
         <CreatePollButton/>
 
         <section class="mt-10">
+          <Icon v-if="polls == null" :class="['animate-spin', 'text-pomelo-red']" :name="'bx:loader-circle'" :size="'5em'" />
           <PollListItem
               v-for="poll in polls" :key="poll.id" :class="['mb-3.5']"
               :id="poll.id" :name="poll.name" :description="poll.description" :end-date="poll.endDate"
@@ -34,7 +35,6 @@ export default {
     async fetchPolls() {
       const polls = await useFetch('https://backberry.ddev.site/api/polls/all');
       this.polls = polls.data;
-      console.log('PollBody', polls.data);
     }
   }
 }
