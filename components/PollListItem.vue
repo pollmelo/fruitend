@@ -11,7 +11,7 @@
             class="inline-block ml-2 text-lg font-semibold align-middle hover:cursor-pointer"
             @click="goToPoll"
         >
-          {{ this.title }}
+          {{ this.name }}
         </h5>
       </div>
 
@@ -26,7 +26,7 @@
 
 <script>
   export default {
-    props: ['id', 'title', 'description', 'endDate'],
+    props: ['id', 'name', 'description', 'endDate'],
 
     data() {
       return {
