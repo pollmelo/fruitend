@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 @layer components {
-    .btn {
+    .majorBtn {
         @apply bg-pomelo-yellow text-pomelo-red p-5 rounded-md text-sm font-bold;
+    }
+
+    .minorBtn{
+        @apply text-gray-400 p-5 rounded-md text-sm font-semibold;
     }
 
     .txtField {
