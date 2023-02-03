@@ -3,7 +3,7 @@
     <div class="container items-center bg-pomelo-grey w-1/4 p-6 mx-auto">
       <input
           id="name"
-          class="txtField h-10 mt-2 font-bold w-full"
+          class="txtField h-10 mt-2 font-bold w-full p-2"
           placeholder="*Titel eingeben"
           type="text"
           minlength="5" maxlength="80"
@@ -11,7 +11,7 @@
       <br>
       <textarea
           id="description"
-          class="txtField h-60 mt-2 w-full"
+          class="txtField h-60 mt-2 w-full px-2"
           placeholder="*Beschreibung"
           minlength="80" maxlength="500"
           rows="10"
@@ -19,7 +19,7 @@
       <br>
       <input
           id="endDate"
-          class="txtField h-10 w-28"
+          class="txtField h-10 w-45"
           type="date"
           required>
     </div>
