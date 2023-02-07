@@ -27,11 +27,11 @@
 
       <div class="basis-10 flex flex-row justify-between">
         <div class="flex flex-col">
-          <Icon :class="['text-green-900']" :name="'bi:hand-thumbs-up-fill'" :size="'2em'" />
+          <Icon :class="['text-green-900', 'hover:text-green-700']" :name="'bi:hand-thumbs-up-fill'" :size="'2em'" />
           <label class="text-center">{{ this.upvoteCount }}</label>
         </div>
         <div class="flex flex-col">
-          <Icon :class="['text-red-900']" :name="'bi:hand-thumbs-down-fill'" :size="'2em'" />
+          <Icon :class="['text-red-900', 'hover:text-red-700']" :name="'bi:hand-thumbs-down-fill'" :size="'2em'" />
           <label class="text-center">{{ this.downvoteCount }}</label>
         </div>
       </div>
