@@ -20,7 +20,23 @@
 
     <p class="mb-3 truncate">{{ this.description }}</p>
 
-    <span>{{ endDatePrefix }} am {{ new Date(this.endDate).toLocaleDateString(undefined, this.displayedDateOptions) }}</span>
+    <div class="flex flex-row justify-between">
+      <div class="basis-11/12">
+        <span>{{ endDatePrefix }} am {{ new Date(this.endDate).toLocaleDateString(undefined, this.displayedDateOptions) }}</span>
+      </div>
+
+      <div class="basis-10 flex flex-row justify-between">
+        <div class="flex flex-col">
+          <Icon :class="['text-green-900']" :name="'bi:hand-thumbs-up-fill'" :size="'2em'" />
+          <label class="text-center">65</label>
+        </div>
+        <div class="flex flex-col">
+          <Icon :class="['text-red-900']" :name="'bi:hand-thumbs-down-fill'" :size="'2em'" />
+          <label class="text-center">65</label>
+        </div>
+      </div>
+    </div>
+
   </article>
 </template>
 
