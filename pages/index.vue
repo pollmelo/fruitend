@@ -14,6 +14,7 @@
           <PollListItem
               v-for="poll in polls" :key="poll.id" :class="['mb-3.5']"
               :id="poll.id" :name="poll.name" :description="poll.description" :end-date="poll.endDate"
+              :upvote-count="poll.upvotes" :downvote-count="poll.downvotes"
           />
         </section>
       </div>
