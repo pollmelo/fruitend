@@ -28,11 +28,11 @@
       <div class="basis-10 flex flex-row justify-between">
         <div class="flex flex-col">
           <Icon :class="['text-green-900']" :name="'bi:hand-thumbs-up-fill'" :size="'2em'" />
-          <label class="text-center">65</label>
+          <label class="text-center">{{ this.upvoteCount }}</label>
         </div>
         <div class="flex flex-col">
           <Icon :class="['text-red-900']" :name="'bi:hand-thumbs-down-fill'" :size="'2em'" />
-          <label class="text-center">65</label>
+          <label class="text-center">{{ this.downvoteCount }}</label>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
 
 <script>
   export default {
-    props: ['id', 'name', 'description', 'endDate'],
+    props: ['id', 'name', 'description', 'endDate', 'upvoteCount', 'downvoteCount'],
 
     data() {
       return {
