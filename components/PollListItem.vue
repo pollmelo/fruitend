@@ -7,10 +7,7 @@
             :src="pollCreatorAvatarUrl"
             alt="Avatar of poll creator"
         />
-        <h5
-            class="inline-block ml-2 text-lg font-semibold align-middle hover:cursor-pointer"
-            @click="goToPoll"
-        >
+        <h5 class="inline-block ml-2 text-lg font-semibold align-middle hover:cursor-pointer" @click="goToPoll">
           {{ this.name }}
         </h5>
       </div>
