@@ -1,10 +1,14 @@
 <template>  
     <div>
-      <header>
-        <NuxtLink to="/">
-          <img alt="POLLmelo logo" class="m-3" height="100" src="~/assets/img/logoSquare.png" width="100"/>
-        </NuxtLink>
-        <hr class="h-px my-8 bg-gray-500 border-0 dark:bg-gray-800">
+      <header class="border-b-2">
+        <nav class="container mx-auto p-4 flex items-center justify-between">
+          <NuxtLink to="/">
+            <img alt="POLLmelo logo" class=" rounded" src="~/assets/img/logoRect.png" width="150"/>
+          </NuxtLink>
+          <ul class="mx-10 flex gap-8 font-bold text-pomelo-red">
+            <li><NuxtLink to="/about">About</NuxtLink></li>
+          </ul>
+        </nav>
       </header>
       <div>
         <slot/>
