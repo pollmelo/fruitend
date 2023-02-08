@@ -24,8 +24,9 @@
           required>
     </div>
     <div class="container text-right w-1/4 mx-auto">
+      <NuxtLink class="minorBtn mx-3" to="/">Abbrechen</NuxtLink>
       <button
-          class="btn mt-5"
+          class="majorBtn mt-5"
           type="submit">
         Veröffentlichen
       </button>
