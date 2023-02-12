@@ -5,8 +5,8 @@
             <div class="w-1/4">
             </div>
             <div class="w-1/2 flex-none">
-                <div class="container flex-wrap -mb-4 items-center bg-pomelo-grey w-1/4 p-6 min-w-fit mx-auto px-30">
-                    <div class="mt-2 font-bold w-full p-2 bg-white border-2 border-pomelo-red">
+                <div class="container flex-wrap items-center bg-pomelo-grey w-1/4 p-6 min-w-fit">
+                    <div class="font-bold w-full p-2 bg-white border-2 border-pomelo-red">
                         Abstimmungstitel Platzhalter für Abstimmung mit der ID {{ id }}
                     </div>
                     <div class="h-60 mt-2 w-full p-2 bg-white border-2 border-pomelo-red">
