@@ -2,7 +2,7 @@
   <h1 class="majorTxt m-4">Über das Projekt</h1>
   <p class="text-gray-400 m-4">POLLmelo ist als Projekt für Software Engineering 2 an der
     <a class="text-pomelo-yellow" href="https://www.hwr-berlin.de/" target="_blank">Hochschule für Wirtschaft und Recht</a>
-    entstanden. Dabei war uns wichtig ein Projekt zu finden welches auch über den Kurs hinaus bestehen bleibt. Deswegen
+    entstanden. Dabei war uns wichtig ein Projekt zu finden, welches auch über den Kurs hinaus bestehen bleibt. Deswegen
     haben wir nach Problemen gesucht, die wir im Team haben und angehen können. Dabei brachte Martin auf, das er für das
     OpenSource Projekt
     <a class="text-pomelo-yellow" href="https://foodsharing.de" target="_blank">foodsharing.de</a>
