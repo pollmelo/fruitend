@@ -12,7 +12,7 @@
   <p class="text-gray-400 m-4">POLLmelo ermöglicht es, dass aus der Community Verbesserungsvorschläge eingereicht werden
     können und diese auch dann auch von der Community gevoted werden. Da die Entwicklungszeit für foodsharing.de
     begrenzt
-    ist können die Entwickler/innen durch diese Votes aus der Community entscheiden, welche Verbesserungen priorisiert
+    ist, können die Entwickler/innen durch diese Votes aus der Community entscheiden, welche Verbesserungen priorisiert
     umgesetzt werden.</p>
 
   <div class="flex justify-center gap-4 m-4 items-center">
