@@ -31,6 +31,7 @@
                                                                    src="~/assets/img/github-mark.png" width="24"></a>
     </div>
   </div>
+  <br>
 </template>
 
 <script>
