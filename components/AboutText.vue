@@ -7,7 +7,7 @@
     OpenSource Projekt
     <a class="text-pomelo-yellow" href="https://foodsharing.de" target="_blank">foodsharing.de</a>
     entwickelt und ihm dort eine Funktion zur Handhabung von Verbesserungsvorschlägen
-    an der Website fehlt. Deswegen haben wir beschlossen ein solches Feature entwickeln.</p>
+    an der Website fehlt. Deswegen haben wir beschlossen, ein solches Feature entwickeln.</p>
 
   <p class="text-gray-400 m-4">POLLmelo ermöglicht es, dass aus der Community Verbesserungsvorschläge eingereicht werden
     können und diese auch dann auch von der Community gevoted werden. Da die Entwicklungszeit für foodsharing.de
