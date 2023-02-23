@@ -1,11 +1,14 @@
 <template>
-    <div>
+  <div class="container mx-auto">
+    <AboutText/>
 
-    </div>
+    <hr class="bg-pomelo-grey h-0.5 mx-4">
+
+    <AboutTeam/>
+  </div>
 </template>
 
 <script setup>
-
 </script>
 
 <style scoped>
