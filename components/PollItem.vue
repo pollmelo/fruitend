@@ -7,25 +7,24 @@
             <div class="w-1/2 flex-none">
                 <div class="container flex-wrap items-center bg-pomelo-grey w-1/4 p-6 min-w-fit">
                     <div class="font-bold w-full p-2 bg-white border-2 border-pomelo-red">
-                        Abstimmungstitel Platzhalter für Abstimmung mit der ID {{ id }}
+                      {{ this.name }}
                     </div>
                     <div class="h-60 mt-2 w-full p-2 bg-white border-2 border-pomelo-red">
-                        Das ist die Beschreibung der Abstimmung. Das ist die Beschreibung der Abstimmung. Das ist die
-                        Beschreibung der Abstimmung.
+                        {{this.description}}
                     </div>
                     <div class="flex flex-row pt-10">
                         <div class="flex-col w-1/5 mr-auto bg-white p-2">
-                            endet am: 07.07.2023
+                            endet am: {{ new Date(this.endDate).toLocaleDateString(undefined, this.displayedDateOptions) }}
                         </div>
                         <div class="flex-col">
                             <Icon :class="['text-green-900', 'hover:text-green-700']" :name="'bi:hand-thumbs-up-fill'"
                                 :size="'2em'" />
-                            <label class="text-center">50</label>
+                            <label class="text-center">{{this.upvoteCount}}</label>
                         </div>
                         <div class="flex-col px-10">
                             <Icon :class="['text-red-900', 'hover:text-red-700']" :name="'bi:hand-thumbs-down-fill'"
                                 :size="'2em'" />
-                            <label class="text-center">20</label>
+                            <label class="text-center">{{ this.downvoteCount }}</label>
                         </div>
                         
                     </div>
@@ -39,9 +38,58 @@
 
 </template>
 
-<script setup>
-    const { id } = useRoute().params;
+<script>
+export default {
+  props: ['id', 'name', 'description', 'endDate', 'upvoteCount', 'downvoteCount'],
 
+  data() {
+    return {
+      timestampFromNow: Date.now(),
+      timestampOfEndDate: Date.parse(this.endDate),
+      displayedDateOptions: {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      },
+    }
+  },
+
+  computed: {
+    urlToPoll() {
+      return `/polls/${this.id}`;
+    },
+
+    isVotable() {
+      return this.timestampOfEndDate > this.timestampFromNow;
+    },
+
+    endDatePrefix() {
+      return this.isVotable ? 'endet' : 'endete';
+    },
+
+    pollCreatorAvatarUrl() {
+      return `https://api.dicebear.com/5.x/micah/svg?seed=${this.id}&mouth=pucker,laughing,smile&size=64`;
+    },
+
+    trafficLightColor() {
+      return this.isVotable ? 'text-green-500' : 'text-red-500';
+    },
+  },
+
+  methods: {
+    async goToPoll() {
+      await navigateTo(this.urlToPoll);
+    },
+
+    async upvote() {
+
+    },
+
+    async downvote() {
+
+    },
+  },
+}
 </script>
 
 <style scoped>
