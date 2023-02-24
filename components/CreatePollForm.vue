@@ -30,7 +30,9 @@
       <NuxtLink class="minorBtn mx-3" to="/">Abbrechen</NuxtLink>
       <button
           class="majorBtn mt-5"
-          type="submit">
+          type="submit"
+          @click.prevent="submit"
+      >
         Veröffentlichen
       </button>
     </div>
@@ -38,6 +40,21 @@
 </template>
 
 <script>
+  export default {
+    data() {
+      return {
+        name: "",
+        description: "",
+        endDate: "",
+      }
+    },
+
+    methods: {
+      submit() {
+        useFetch('https://backberry.ddev.site/api/polls/create',{method:'post', body:{name:this.name,description:this.description,endDate:this.endDate}})
+      }
+    }
+  }
 </script>
 
 <style scoped>
