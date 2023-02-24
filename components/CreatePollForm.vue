@@ -2,6 +2,7 @@
   <form class="mx-auto">
     <div class="container items-center bg-pomelo-grey w-1/4 p-6 mx-auto">
       <input
+          v-model="name"
           id="name"
           class="txtField h-10 mt-2 font-bold w-full p-2"
           placeholder="*Titel eingeben"
@@ -10,6 +11,7 @@
           required>
       <br>
       <textarea
+          v-model="description"
           id="description"
           class="txtField h-60 mt-2 w-full px-2"
           placeholder="*Beschreibung"
@@ -18,6 +20,7 @@
           required></textarea>
       <br>
       <input
+          v-model="endDate"
           id="endDate"
           class="txtField h-10 w-45"
           type="date"
