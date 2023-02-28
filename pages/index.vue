@@ -41,12 +41,6 @@ export default {
       this.polls = polls.data;
     }
   },
-
-  head() {
-    return {
-      title: 'Vue Dose is awesome!',
-    }
-  }
 }
 </script>
 
