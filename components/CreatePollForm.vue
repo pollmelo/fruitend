@@ -56,9 +56,9 @@
           body: {name: this.name, description: this.description, endDate: this.endDate},
         })
 
-        if (data.id) {
+        if (data) {
           console.log(data)
-          await navigateTo(`/polls/${data.id}`)
+          await navigateTo(`/polls/${data.value.id}`)
         }
 
         if (error) {
