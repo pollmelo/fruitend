@@ -37,7 +37,6 @@ export default {
     async fetchPolls() {
       const polls = await useFetch('https://backberry.ddev.site/api/polls/all');
       this.polls = Array.from(polls.data.value);
-      console.log(this.polls);
     }
   }
 }
