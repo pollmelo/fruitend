@@ -17,12 +17,12 @@
                             endet am: {{ new Date(this.endDate).toLocaleDateString(undefined, this.displayedDateOptions) }}
                         </div>
                         <div class="flex-col">
-                            <Icon :class="['text-green-900', 'hover:text-green-700']" :name="'bi:hand-thumbs-up-fill'" @click="[addUpvote, upvote]"
+                            <Icon :class="['text-green-900', 'hover:text-green-700']" :name="'bi:hand-thumbs-up-fill'" @click="addUpvote"
                                 :size="'2em'" />
                             <label class="text-center">{{this.upvoteCount}}</label>
                         </div>
                         <div class="flex-col px-10">
-                            <Icon :class="['text-red-900', 'hover:text-red-700']" :name="'bi:hand-thumbs-down-fill'" @click="[addDownvote, downvote]"
+                            <Icon :class="['text-red-900', 'hover:text-red-700']" :name="'bi:hand-thumbs-down-fill'" @click="addDownvote"
                                 :size="'2em'" />
                             <label class="text-center">{{ this.downvoteCount }}</label>
                         </div>
@@ -34,18 +34,24 @@
             </div>
         </div>
     </div>
-
-    now
 </template>
 
 <script>
+
 export default {
   props: ['id', 'name', 'description', 'endDate', 'upvoteCount', 'downvoteCount'],
+
+  mounted() {
+    this.upvotes = this.upvoteCount
+    this.downvotes = this.downvoteCount
+  },
 
   data() {
     return {
       timestampFromNow: Date.now(),
       timestampOfEndDate: Date.parse(this.endDate),
+      upvotes: 0,
+      downvotes: 0,
       displayedDateOptions: {
         year: "numeric",
         month: "2-digit",
@@ -77,47 +83,35 @@ export default {
   },
 
   methods: {
-    async goToPoll() {
-      await navigateTo(this.urlToPoll);
-    },
-
     async addUpvote() {
-      this.upvoteCount += 1
+      this.upvotes += 1
+      this.upvote()
     },
 
     async addDownvote() {
-      this.downvoteCount += 1
+      this.downvotes += 1
+      this.downvote()
     },
 
     async upvote() {
-      const {data, error} = await useFetch('https://backberry.ddev.site/api/polls/${this.id}', {
-        method: 'post', 
-        body: {
-          body: {name: this.name, upvoteCount: this.upvoteCount}
-        }
+      const {data, error} = await useFetch(() => `https://backberry.ddev.site/api/votes/create`, {
+        method: 'POST', 
+        initialCache: false,
+        body: {pollId: this.id, description: 1}
       })
       if (data) {
         console.log(data)
-        location.reload()
-      }
-      if (error) {
-        console.error(error)
       }
     },
 
     async downvote() {
-      const {data, error} = await useFetch('https://backberry.ddev.site/api/polls/${this.id}', {
-        method: 'post', 
-        body: {
-          body: {name: this.name, downvoteCount: this.downvoteCount}
-        }
+      const {data, error} = await useFetch(() => `https://backberry.ddev.site/api/votes/create`, {
+        method: 'POST', 
+        initialCache: false,
+        body: {pollId: this.id, description: 0}
       })
       if (data) {
         console.log(data)
-        location.reload()
-      }
-      if (error) {
-        console.error(error)
       }
     },
   },

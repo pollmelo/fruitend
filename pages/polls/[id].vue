@@ -8,7 +8,8 @@
 </template>
 
 <script setup>
-
+import { nextTick } from 'vue'
+await nextTick()
 </script>
 
 <script>
