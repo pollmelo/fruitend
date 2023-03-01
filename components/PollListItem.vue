@@ -30,7 +30,7 @@
               @click="upvote"
               :size="'2em'"
           />
-          <label class="text-center">{{ this.upvoteCount }}</label>
+          <label class="text-center">{{ this.upvotes }}</label>
         </div>
         <div class="flex flex-col">
           <Icon
@@ -39,7 +39,7 @@
               @click="downvote"
               :size="'2em'"
           />
-          <label class="text-center">{{ this.downvoteCount }}</label>
+          <label class="text-center">{{ this.downvotes }}</label>
         </div>
       </div>
     </div>
@@ -51,10 +51,17 @@
   export default {
     props: ['id', 'name', 'description', 'endDate', 'upvoteCount', 'downvoteCount'],
 
+    mounted() {
+      this.upvotes = this.upvoteCount
+      this.downvotes = this.downvoteCount
+    },
+
     data() {
       return {
         timestampFromNow: Date.now(),
         timestampOfEndDate: Date.parse(this.endDate),
+        upvotes: 0,
+        downvotes: 0,
         displayedDateOptions: {
           year: "numeric",
           month: "2-digit",
@@ -91,11 +98,22 @@
       },
 
       async upvote() {
+        await useFetch("https://backberry.ddev.site/api/votes/create", {
+          method: 'POST',
+          body: { description: true, pollId: this.id }
+        });
 
+        this.upvotes++
       },
 
       async downvote() {
+        await useFetch("https://backberry.ddev.site/api/votes/create", {
+          method: 'POST',
+          body: { description: false, pollId: this.id }
+        });
 
+
+        this.downvotes++
       },
     },
   }
