@@ -17,12 +17,12 @@
                             endet am: {{ new Date(this.endDate).toLocaleDateString(undefined, this.displayedDateOptions) }}
                         </div>
                         <div class="flex-col">
-                            <Icon :class="['text-green-900', 'hover:text-green-700']" :name="'bi:hand-thumbs-up-fill'"
+                            <Icon :class="['text-green-900', 'hover:text-green-700']" :name="'bi:hand-thumbs-up-fill'" @click="[addUpvote, upvote]"
                                 :size="'2em'" />
                             <label class="text-center">{{this.upvoteCount}}</label>
                         </div>
                         <div class="flex-col px-10">
-                            <Icon :class="['text-red-900', 'hover:text-red-700']" :name="'bi:hand-thumbs-down-fill'"
+                            <Icon :class="['text-red-900', 'hover:text-red-700']" :name="'bi:hand-thumbs-down-fill'" @click="[addDownvote, downvote]"
                                 :size="'2em'" />
                             <label class="text-center">{{ this.downvoteCount }}</label>
                         </div>
@@ -35,7 +35,7 @@
         </div>
     </div>
 
-
+    now
 </template>
 
 <script>
@@ -81,12 +81,44 @@ export default {
       await navigateTo(this.urlToPoll);
     },
 
-    async upvote() {
+    async addUpvote() {
+      this.upvoteCount += 1
+    },
 
+    async addDownvote() {
+      this.downvoteCount += 1
+    },
+
+    async upvote() {
+      const {data, error} = await useFetch('https://backberry.ddev.site/api/polls/${this.id}', {
+        method: 'post', 
+        body: {
+          body: {name: this.name, upvoteCount: this.upvoteCount}
+        }
+      })
+      if (data) {
+        console.log(data)
+        location.reload()
+      }
+      if (error) {
+        console.error(error)
+      }
     },
 
     async downvote() {
-
+      const {data, error} = await useFetch('https://backberry.ddev.site/api/polls/${this.id}', {
+        method: 'post', 
+        body: {
+          body: {name: this.name, downvoteCount: this.downvoteCount}
+        }
+      })
+      if (data) {
+        console.log(data)
+        location.reload()
+      }
+      if (error) {
+        console.error(error)
+      }
     },
   },
 }
