@@ -25,7 +25,11 @@ export default {
 
   methods: {
     async fetchPoll() {
-      const poll = await useFetch('https://backberry.ddev.site/api/polls/14');
+      const pollId = useRoute().params.id;
+      const poll = await useFetch( () => `https://backberry.ddev.site/api/polls/${pollId}`, {
+        method: 'get',
+        initialCache: false,
+      });
       this.poll = poll.data;
     }
   }
