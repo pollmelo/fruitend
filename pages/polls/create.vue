@@ -7,6 +7,14 @@
 <script setup>
 </script>
 
+<script>
+export default {
+  beforeMount () {
+    document.title = "POLLmelo - Abstimmung erstellen"
+  }
+}
+</script>
+
 <style scoped>
 
 </style>

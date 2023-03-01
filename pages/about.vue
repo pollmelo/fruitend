@@ -11,6 +11,14 @@
 <script setup>
 </script>
 
+<script>
+export default {
+  beforeMount () {
+    document.title = "POLLmelo - About"
+  }
+}
+</script>
+
 <style scoped>
 
 </style>
