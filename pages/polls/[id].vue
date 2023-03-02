@@ -1,10 +1,10 @@
 <template>
     <div>
       <PollItem
-          :id=poll.id :name=poll.name :description=poll.description :end-date=poll.endDate
+          v-if="poll" :id=poll.id :name=poll.name :description=poll.description :end-date=poll.endDate
           :upvote-count=poll.upvotes :downvote-count=poll.downvotes
       />
-    </div>
+    </div>  
 </template>
 
 <script setup>
@@ -15,12 +15,14 @@ await nextTick()
 <script>
 export default {
   beforeMount() {
-    this.fetchPoll();
+    this.fetchPoll().then((result) => {
+      this.poll = result;
+    });
   },
 
   data() {
     return {
-      poll: [],
+      poll: undefined,
     }
   },
 
@@ -31,7 +33,7 @@ export default {
         method: 'get',
         initialCache: false,
       });
-      this.poll = poll.data;
+      return poll.data;
     }
   }
 }

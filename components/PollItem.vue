@@ -19,12 +19,12 @@
                         <div class="flex-col">
                             <Icon :class="['text-green-900', 'hover:text-green-700']" :name="'bi:hand-thumbs-up-fill'" @click="addUpvote"
                                 :size="'2em'" />
-                            <label class="text-center">{{this.upvoteCount}}</label>
+                            <label class="text-center">{{this.upvotes}}</label>
                         </div>
                         <div class="flex-col px-10">
                             <Icon :class="['text-red-900', 'hover:text-red-700']" :name="'bi:hand-thumbs-down-fill'" @click="addDownvote"
                                 :size="'2em'" />
-                            <label class="text-center">{{ this.downvoteCount }}</label>
+                            <label class="text-center">{{ this.downvotes }}</label>
                         </div>
                         
                     </div>
