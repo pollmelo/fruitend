@@ -7,7 +7,6 @@
     </div>
     <div class="container py-10 mx-auto">
       <CreatePollButton/>
-
       <section class="mt-10">
         <Icon v-if="polls == null" :class="['animate-spin', 'text-pomelo-red']" :name="'bx:loader-circle'"
               :size="'5em'"/>
@@ -18,6 +17,9 @@
             :name="poll.name" :upvote-count="poll.upvotes"
         />
       </section>
+    </div>
+    <div class="container py-10 mx-auto">
+      <BackToTopButton @click="scrollToTop"/>
     </div>
   </div>
 </template>
@@ -44,6 +46,10 @@ export default {
     async fetchPolls() {
       const polls = await useFetch('https://backberry.ddev.site/api/polls/all');
       this.polls = polls.data;
+    },
+
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" })
     }
   }
 }
