@@ -97,6 +97,7 @@ export default {
       const {data, error} = await useFetch(() => `https://backberry.ddev.site/api/votes/create`, {
         method: 'POST', 
         initialCache: false,
+
         body: {pollId: this.id, description: 1},
       })
     },
@@ -105,6 +106,7 @@ export default {
       const {data, error} = await useFetch(() => `https://backberry.ddev.site/api/votes/create`, {
         method: 'POST', 
         initialCache: false,
+
         body: {pollId: this.id, description: 0},
       })
     },
