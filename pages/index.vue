@@ -13,7 +13,7 @@
         <Icon v-if="polls == null" :class="['animate-spin', 'text-pomelo-red']" :name="'bx:loader-circle'"
               :size="'5em'"/>
         <PollListItem
-            v-if="polls" v-for="poll in polls" :id="poll.id" :key="poll.id"
+            v-if="polls" v-for="poll in sortedPolls" :id="poll.id" :key="poll.id"
             :class="['mb-3.5']" :description="poll.description" :downvote-count="poll.downvotes"
             :end-date="poll.endDate"
             :name="poll.name" :upvote-count="poll.upvotes"
@@ -32,6 +32,11 @@ export default {
   data() {
     return {
       polls: null,
+    }
+  },
+  computed: {
+    sortedPolls() {
+      return this.polls.sort((a, b) => Date.parse(b.endDate) - Date.parse(a.endDate))
     }
   },
   methods: {
