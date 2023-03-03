@@ -44,7 +44,6 @@ export default {
   beforeMount() {
     this.fetchPoll().then((result) => {
       this.poll = result;
-      console.log(result)
 document.title = 'POLLmelo - ' + (result.value ? result.value.name : "");
     });
   },
