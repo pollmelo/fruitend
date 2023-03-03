@@ -8,8 +8,6 @@
 </template>
 
 <script setup>
-import { nextTick } from 'vue'
-await nextTick()
 </script>
 
 <script>
@@ -17,6 +15,7 @@ export default {
   beforeMount() {
     this.fetchPoll().then((result) => {
       this.poll = result;
+      document.title = 'POLLmelo - ' + (result.value ? result.value.name : "");
     });
   },
 

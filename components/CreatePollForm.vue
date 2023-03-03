@@ -51,19 +51,12 @@
 
     methods: {
       submit: async function () {
-        const {data, error} = await useFetch('https://backberry.ddev.site/api/polls/create', {
+        const {data} = await useFetch('https://backberry.ddev.site/api/polls/create', {
           method: 'post',
           body: {name: this.name, description: this.description, endDate: this.endDate},
         })
 
-        if (data) {
-          console.log(data)
-          await navigateTo(`/polls/${data.value.id}`)
-        }
-
-        if (error) {
-          console.error(error)
-        }
+        await navigateTo(`/polls/${data.value.id}`)
       }
     }
   }
