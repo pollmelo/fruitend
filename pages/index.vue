@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <div class="relative">
@@ -45,7 +46,7 @@ export default {
       const polls = await useFetch('https://backberry.ddev.site/api/polls/all');
       this.polls = polls.data;
     }
-  }
+  },
 }
 </script>
 
