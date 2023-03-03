@@ -17,7 +17,7 @@ export default {
     this.fetchPoll().then((result) => {
       this.poll = result;
       console.log(result)
-      document.title = result.value ? result.value.name : "POLLme";
+document.title = 'POLLmelo - ' + (result.value ? result.value.name : "");
     });
   },
 
