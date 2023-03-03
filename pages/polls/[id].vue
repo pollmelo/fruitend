@@ -8,7 +8,35 @@
 </template>
 
 <script setup>
+import { nextTick } from 'vue'
+await nextTick()
+</script>
 
+<script>
+export default {
+  beforeMount() {
+    this.fetchPoll().then((result) => {
+      this.poll = result;
+    });
+  },
+
+  data() {
+    return {
+      poll: undefined,
+    }
+  },
+
+  methods: {
+    async fetchPoll() {
+      const pollId = useRoute().params.id;
+      const poll = await useFetch( () => `https://backberry.ddev.site/api/polls/${pollId}`, {
+        method: 'get',
+        initialCache: false,
+      });
+      return poll.data;
+    }
+  }
+}
 </script>
 
 <script>

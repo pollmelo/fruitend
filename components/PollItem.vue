@@ -97,24 +97,20 @@ export default {
       const {data, error} = await useFetch(() => `https://backberry.ddev.site/api/votes/create`, {
         method: 'POST', 
         initialCache: false,
-        body: {pollId: this.id, description: 1}
+
+        body: {pollId: this.id, description: 1},
       })
-      if (data) {
-        console.log(data)
-      }
     },
 
     async downvote() {
       const {data, error} = await useFetch(() => `https://backberry.ddev.site/api/votes/create`, {
         method: 'POST', 
         initialCache: false,
-        body: {pollId: this.id, description: 0}
+
+        body: {pollId: this.id, description: 0},
       })
-      if (data) {
-        console.log(data)
-      }
     },
-  },
+  }
 }
 </script>
 
