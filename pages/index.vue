@@ -28,7 +28,7 @@
 export default {
   beforeMount() {
     this.fetchPolls();
-    document.title = "POLLmelo"
+    document.title = "POLLmelo";
   },
   
   data() {

@@ -85,28 +85,26 @@ export default {
   methods: {
     async addUpvote() {
       this.upvotes += 1
-      this.upvote()
+      await this.upvote()
     },
 
     async addDownvote() {
       this.downvotes += 1
-      this.downvote()
+      await this.downvote()
     },
 
     async upvote() {
-      const {data, error} = await useFetch(() => `https://backberry.ddev.site/api/votes/create`, {
+      await useFetch(() => `https://backberry.ddev.site/api/votes/create`, {
         method: 'POST', 
         initialCache: false,
-
         body: {pollId: this.id, description: 1},
       })
     },
 
     async downvote() {
-      const {data, error} = await useFetch(() => `https://backberry.ddev.site/api/votes/create`, {
+      await useFetch(() => `https://backberry.ddev.site/api/votes/create`, {
         method: 'POST', 
         initialCache: false,
-
         body: {pollId: this.id, description: 0},
       })
     },
