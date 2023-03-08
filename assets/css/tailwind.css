@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .majorBtn {
+        @apply bg-pomelo-yellow text-pomelo-red p-5 rounded-md text-sm font-bold;
+    }
+
+    .minorBtn {
+        @apply text-gray-400 p-5 rounded-md text-sm font-semibold;
+    }
+
+    .txtField {
+        @apply bg-white border-2 border-pomelo-red;
+    }
+
+    .majorTxt {
+        @apply text-pomelo-red text-sm font-bold text-2xl;
+    }
+
+    .minorTxt {
+        @apply text-pomelo-yellow text-sm font-bold text-xl;
+    }
+}
