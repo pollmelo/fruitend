@@ -1,6 +1,5 @@
 <template>
-  <form class="mx-auto" @submit.prevent="submit"
-  >
+  <form class="mx-auto" @submit.prevent="submit">
     <div class="container items-center bg-pomelo-grey w-1/4 p-6 mx-auto">
       <input
           v-model="name"
